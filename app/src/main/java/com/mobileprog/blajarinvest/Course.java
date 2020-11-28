@@ -10,6 +10,14 @@ public class Course {
         this.name = name;
     }
 
+    public Course(String name) {
+        this.name = name;
+    }
+
+
+    public Course() {
+    }
+
     public long getId() {
         return id;
     }

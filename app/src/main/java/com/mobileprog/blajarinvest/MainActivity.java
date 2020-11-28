@@ -13,7 +13,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    List<Course> courseList = new ArrayList<>();
+    List<Course> courseList;
+    CourseDatabase courseDatabase;
     RecyclerView rvCourses;
     CourseAdapter adapter;
     TextView tvWelcome;
@@ -28,9 +29,8 @@ public class MainActivity extends AppCompatActivity {
         String username = PreferenceHelper.getUsername(this);
         tvWelcome.setText("Halo, " + username);
 
-
-
-        courseList.add(new Course(1, "Introduksi"));
+        courseDatabase = new CourseDatabase(this);
+        courseList = courseDatabase.getAllCourse();
 
         rvCourses = findViewById(R.id.rvCourses);
         rvCourses.setLayoutManager(new LinearLayoutManager(this));
