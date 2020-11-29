@@ -23,6 +23,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             "DROP TABLE IF EXISTS " + TABLE_NAME_COURSES;
     /* ========================================================================= */
 
+    /* ============================ COURSE CONTENTS ============================ */
+    public static final String TABLE_NAME_COURSE_CONTENTS = "course_contents";
+    public static final String FIELD_COURSE_CONTENT_COURSE_ID = "course_id";
+    public static final String FIELD_COURSE_CONTENT_ID = "id";
+    public static final String FIELD_COURSE_CONTENT_TEXT = "text";
+
+    private static final String createCourseContents =
+            "CREATE TABLE IF NOT EXISTS " + TABLE_NAME_COURSE_CONTENTS + " (" +
+                    FIELD_COURSE_CONTENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    FIELD_COURSE_CONTENT_COURSE_ID + " INTEGER, " +
+                    FIELD_COURSE_CONTENT_TEXT + " TEXT, " +
+                    " FOREIGN KEY (" + FIELD_COURSE_CONTENT_COURSE_ID + ") REFERENCES " + TABLE_NAME_COURSES + "(" + FIELD_COURSE_ID + ")"
+                    + ")";
+
+    private static final String dropCourseContents =
+            "DROP TABLE IF EXISTS " + TABLE_NAME_COURSE_CONTENTS;
+    /* ========================================================================= */
+
 
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -31,11 +49,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(createCourses);
+        db.execSQL(createCourseContents);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL(dropCourses);
+        db.execSQL(dropCourseContents);
         onCreate(db);
     }
 }

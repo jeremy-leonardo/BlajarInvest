@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         tvWelcome = findViewById(R.id.tvWelcome);
 
         String username = PreferenceHelper.getUsername(this);
-        tvWelcome.setText("Halo, " + username);
+        tvWelcome.setText("Halo " + username + ",");
 
         courseDatabase = new CourseDatabase(this);
         courseList = courseDatabase.getAllCourse();
