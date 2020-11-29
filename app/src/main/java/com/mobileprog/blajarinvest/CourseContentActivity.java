@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -12,6 +14,7 @@ public class CourseContentActivity extends AppCompatActivity {
 
     long courseId;
     Course course;
+    int page;
     ArrayList<CourseContent> courseContents;
     CourseDatabase courseDatabase;
     CourseContentDatabase courseContentDatabase;
@@ -31,9 +34,30 @@ public class CourseContentActivity extends AppCompatActivity {
         courseId = intent.getLongExtra("courseId", -99);
         course = courseDatabase.getCourse(courseId);
         courseContents = courseContentDatabase.getCourseContentsByCourseId(courseId);
-        tvText.setText(courseContents.get(0).getText());
+        page = 1;
+
+        tvText.setText(courseContents.get(page - 1).getText());
 
         getSupportActionBar().setTitle(course.getName());
 
     }
+
+    public void nextBtnClick(View view) {
+        if(page + 1 <= courseContents.size()) {
+            page++;
+            tvText.setText(courseContents.get(page - 1).getText());
+        } else {
+//            TODO : go to complete activity
+        }
+    }
+
+    public void prevBtnClick(View view) {
+        if(page - 1 > 0){
+            page--;
+            tvText.setText(courseContents.get(page - 1).getText());
+        } else {
+//            TODO : back to menu, or just hide the btn at page 1
+        }
+    }
+
 }
