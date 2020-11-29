@@ -58,14 +58,14 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
         @Override
         public void onClick(View view) {
 
-//            int position = getAdapterPosition();
-//            Course course = courseList.get(position);
+            int position = getAdapterPosition();
+            Course course = courseList.get(position);
 
-//            Intent intent = new Intent(context, TargetActivity.class);
+            Intent intent = new Intent(context, CourseContentActivity.class);
 
-//            intent.putExtra("course", course);
+            intent.putExtra("courseId", course.getId());
 
-//            context.startActivity(intent);
+            context.startActivity(intent);
 
         }
 

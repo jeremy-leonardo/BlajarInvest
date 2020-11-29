@@ -55,8 +55,9 @@ public class CourseDatabase {
 
         if (cursor.moveToFirst()) {
             while (!cursor.isAfterLast()) {
+                long id = cursor.getLong(cursor.getColumnIndex("id"));
                 String name = cursor.getString(cursor.getColumnIndex("name"));
-                courses.add(new Course(name));
+                courses.add(new Course(id, name));
                 cursor.moveToNext();
             }
         }
