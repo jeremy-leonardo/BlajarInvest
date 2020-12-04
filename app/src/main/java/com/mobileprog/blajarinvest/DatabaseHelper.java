@@ -13,11 +13,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE_NAME_COURSES = "courses";
     public static final String FIELD_COURSE_ID = "id";
     public static final String FIELD_COURSE_NAME = "name";
+    public static final String FIELD_COURSE_IS_COMPLETED = "is_completed";
 
     private static final String createCourses =
             "CREATE TABLE IF NOT EXISTS " + TABLE_NAME_COURSES + " (" +
                     FIELD_COURSE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                    FIELD_COURSE_NAME + " TEXT )";
+                    FIELD_COURSE_NAME + " TEXT," +
+                    FIELD_COURSE_IS_COMPLETED + " INTEGER )";
 
     private static final String dropCourses =
             "DROP TABLE IF EXISTS " + TABLE_NAME_COURSES;

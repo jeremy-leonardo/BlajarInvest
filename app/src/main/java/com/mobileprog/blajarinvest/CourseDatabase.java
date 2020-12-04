@@ -19,6 +19,7 @@ public class CourseDatabase {
 
         ContentValues cv = new ContentValues();
         cv.put(DatabaseHelper.FIELD_COURSE_NAME, course.getName());
+        cv.put(DatabaseHelper.FIELD_COURSE_IS_COMPLETED, course.getIsCompleted());
 
         long id = db.insert(DatabaseHelper.TABLE_NAME_COURSES, null, cv);
 
@@ -66,6 +67,18 @@ public class CourseDatabase {
         db.close();
 
         return courses;
+    }
+
+    public void complete(long id) {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+        ContentValues cv = new ContentValues();
+        cv.put(DatabaseHelper.FIELD_COURSE_IS_COMPLETED, 1);
+
+        String selection = "id=?";
+        String[] selectionArgs = {"" + id};
+        db.update(DatabaseHelper.TABLE_NAME_COURSES, cv, selection, selectionArgs);
+        db.close();
     }
 
 }

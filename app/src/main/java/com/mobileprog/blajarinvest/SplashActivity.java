@@ -52,9 +52,22 @@ public class SplashActivity extends AppCompatActivity {
                 "Investasi memiliki risiko tersendiri, dimana hal tersebut akan dibahas di materi - materi berikutnya nanti. Karena adanya risiko tersebut maka pasti ada kemungkinan untuk rugi dalam investasi. " +
                         "\n\nKarena itulah kita tidak boleh berinvestasi dengan uang dapur (uang untuk kebutuhan hidup sehari - hari). Investasi harus dilakukan dengan dana yang tidak akan digunakan dalam waktu dekat. Apabila Anda akan ditagih bayaran uang sekolah anak, maka alokasikan dana untuk hal tersebut dahulu baru setelah tidak ada kebutuhan lainnya boleh diinvestasikan.",
                 1));
+        courseContentDatabase.insertCourseContent(new CourseContent(2,
+                "Sebelum memulai investasi, ada baiknya menyiapkan dana darurat dan asuransi terlebih dahulu. Apalagi apabila Anda sudah berkeluarga. " +
+                        "\n\nDana darurat merupakan dana yang dapat dengan mudah Anda tarik apabila ada suatu keperluan mendesak (misalnya Anda jatuh sakit dan perlu biaya perawatan). " +
+                        "\n\nAsuransi juga merupakan hal yang penting untuk melindungi Anda dan keluarga apabila ada hal buruk yang terjadi, agar tidak perlu mengganggu dana yang sudah diinvestasikan.",
+                2));
         courseDatabase.insertCourse(new Course("Mengenali Profil Risiko"));
         courseContentDatabase.insertCourseContent(new CourseContent(3,
                 "Dalam melakukan investasi, ada banyak hal yang perlu diperhatikan. Salah satunya adalah profil risiko Anda, yang akan menjelaskan seberapa besar risiko yang bisa Anda tanggung atau hadapi.",
                 1));
+        courseContentDatabase.insertCourseContent(new CourseContent(3,
+                "Dalam mengetahui profil risiko Anda, dapat melihat tujuan invetasi, source of income, dan jumlah income Anda. \nDalam menentukannya, seringkali ada banyak questionaire yang dapat membantu Anda yang dapat Anda search di Google.",
+                2));
+        courseContentDatabase.insertCourseContent(new CourseContent(3,
+                "Biasanya secara umum, profil risiko akan dibagi menjadi 3, yaitu: \nKonservatif: Mengambil instrumen investasi yang paling aman, toleransi terhadap kerugian sangat rendah. " +
+                        "\n\nModerat: Mengambil instrumen investasi secara mixed, memiliki toleransi terhadap kerugian. " +
+                        "\n\nAgresif: Mengambil instrumen investasi yang memiliki risiko terbesar namun dengan potensi return yang lebih tinggi, memiliki toleransi yang besar terhadap kerugian.",
+                3));
     }
 }

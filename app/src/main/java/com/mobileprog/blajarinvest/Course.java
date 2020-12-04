@@ -4,16 +4,18 @@ public class Course {
 
     private long id;
     private String name;
+    private int isCompleted;
 
     public Course(long id, String name) {
         this.id = id;
         this.name = name;
+        this.isCompleted = 0;
     }
 
     public Course(String name) {
         this.name = name;
+        this.isCompleted = 0;
     }
-
 
     public Course() {
     }
@@ -32,5 +34,13 @@ public class Course {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getIsCompleted() {
+        return isCompleted;
+    }
+
+    public void setIsCompleted(int isCompleted) {
+        this.isCompleted = isCompleted;
     }
 }

@@ -47,6 +47,7 @@ public class CourseContentActivity extends AppCompatActivity {
             page++;
             tvText.setText(courseContents.get(page - 1).getText());
         } else {
+            courseDatabase.complete(courseId);
             Intent intent = new Intent(this, CompleteActivity.class);
             startActivity(intent);
             finish();
