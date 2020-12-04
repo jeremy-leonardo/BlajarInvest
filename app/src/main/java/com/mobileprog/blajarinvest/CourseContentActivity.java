@@ -47,7 +47,9 @@ public class CourseContentActivity extends AppCompatActivity {
             page++;
             tvText.setText(courseContents.get(page - 1).getText());
         } else {
-//            TODO : go to complete activity
+            Intent intent = new Intent(this, CompleteActivity.class);
+            startActivity(intent);
+            finish();
         }
     }
 
