@@ -5,6 +5,7 @@
     style="@style/RootActivityLayoutStyle"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".CourseContentActivity">
 
     <LinearLayout
@@ -12,34 +13,85 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvText"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Text Course Content"
-            android:textSize="18sp"
-            android:lineSpacingExtra="6sp" />
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"/>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:background="@drawable/background_bottom_card"
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/prevBtn"
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:fillViewport="true"
+                android:scrollbars="vertical">
+
+                <TextView
+                    android:id="@+id/tvText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="6sp"
+                    android:text="Text Course Content"
+                    android:textColor="@color/colorNormalText"
+                    android:textSize="16sp" />
+            </ScrollView>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:onClick="prevBtnClick"
-                android:text="Sebelumnya" />
+                android:layout_marginBottom="10dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/nextBtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:onClick="nextBtnClick"
-                android:text="Lanjut" />
+                <Button
+                    android:id="@+id/prevBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/background_button"
+                    android:minHeight="35dp"
+                    android:onClick="prevBtnClick"
+                    android:text="Sebelumnya"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white" />
+
+                <Button
+                    android:id="@+id/nextBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/background_button"
+                    android:minHeight="35dp"
+                    android:onClick="nextBtnClick"
+                    android:text="Lanjut"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>

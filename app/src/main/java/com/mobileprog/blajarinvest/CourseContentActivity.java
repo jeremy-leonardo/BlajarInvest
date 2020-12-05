@@ -20,25 +20,25 @@ public class CourseContentActivity extends AppCompatActivity {
     CourseContentDatabase courseContentDatabase;
 
     TextView tvText;
+    TextView tvTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_content);
         tvText = findViewById(R.id.tvText);
+        tvTitle = findViewById(R.id.tvTitle);
 
         Intent intent = getIntent();
         courseDatabase = new CourseDatabase(this);
         courseContentDatabase = new CourseContentDatabase(this);
-
         courseId = intent.getLongExtra("courseId", -99);
         course = courseDatabase.getCourse(courseId);
         courseContents = courseContentDatabase.getCourseContentsByCourseId(courseId);
         page = 1;
 
         tvText.setText(courseContents.get(page - 1).getText());
-
-        getSupportActionBar().setTitle(course.getName());
+        tvTitle.setText(course.getName());
 
     }
 
