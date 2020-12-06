@@ -47,6 +47,7 @@ public class CourseContentActivity extends AppCompatActivity {
             page++;
             tvText.setText(courseContents.get(page - 1).getText());
         } else {
+            if(course.getIsCompleted() != 1) PreferenceHelper.addPoints(this, 50);
             courseDatabase.complete(courseId);
             Intent intent = new Intent(this, CompleteActivity.class);
             intent.putExtra("completedCourseId", courseId);

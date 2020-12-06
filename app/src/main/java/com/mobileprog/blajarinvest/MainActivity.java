@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -38,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new CourseAdapter(this, (ArrayList<Course>) courseList);
         rvCourses.setAdapter(adapter);
+    }
+
+    public void onProfileIconClick(View view) {
+        Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+        startActivity(intent);
     }
 
 //    @Override

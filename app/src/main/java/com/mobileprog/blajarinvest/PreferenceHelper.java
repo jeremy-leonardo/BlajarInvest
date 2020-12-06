@@ -21,6 +21,19 @@ public class PreferenceHelper {
         return username;
     }
 
+    public static void addPoints(Context context, int points){
+        SharedPreferences sharedPref = context.getSharedPreferences(context.getString(R.string.preference_file_key), context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt("points", getPoints(context) + points);
+        editor.apply();
+    }
+
+    public static int getPoints(Context context){
+        SharedPreferences sharedPref = context.getSharedPreferences(context.getString(R.string.preference_file_key), context.MODE_PRIVATE);
+        int points = sharedPref.getInt("points", 0);
+        return points;
+    }
+
     public static void setDoneInitDatabase(Context context){
         SharedPreferences sharedPref = context.getSharedPreferences(context.getString(R.string.preference_file_key), context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
