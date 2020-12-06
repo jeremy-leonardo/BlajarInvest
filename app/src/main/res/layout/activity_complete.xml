@@ -11,7 +11,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="20dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -22,6 +24,12 @@
             android:textColor="@android:color/white"
             android:textSize="36sp"
             android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="30dp"
+            app:srcCompat="@drawable/ic_cracker" />
 
         <TextView
             android:layout_width="match_parent"
