@@ -38,7 +38,7 @@ public class CourseContentDatabase {
         Cursor cursor = db.query(DatabaseHelper.TABLE_NAME_COURSE_CONTENTS, null, selection, selectionArgs, null, null, null);
         ArrayList<CourseContent> courseContents = new ArrayList<>();
 
-        Log.v("DEBUG", "getCourseContentsByCourseId "+ courseId);
+        // Log.v("DEBUG", "getCourseContentsByCourseId "+ courseId);
         if (cursor != null && cursor.moveToFirst()) {
             do {
                 CourseContent courseContent = null;
@@ -46,7 +46,7 @@ public class CourseContentDatabase {
                 courseContent.setId(cursor.getLong(cursor.getColumnIndex(DatabaseHelper.FIELD_COURSE_CONTENT_ID)));
                 courseContent.setCourseId(cursor.getLong(cursor.getColumnIndex(DatabaseHelper.FIELD_COURSE_CONTENT_COURSE_ID)));
                 courseContent.setText(cursor.getString(cursor.getColumnIndex(DatabaseHelper.FIELD_COURSE_CONTENT_TEXT)));
-                Log.v("DEBUG", cursor.getString(cursor.getColumnIndex(DatabaseHelper.FIELD_COURSE_CONTENT_TEXT)));
+                // Log.v("DEBUG", cursor.getString(cursor.getColumnIndex(DatabaseHelper.FIELD_COURSE_CONTENT_TEXT)));
                 courseContents.add(courseContent);
             } while (cursor.moveToNext());
         }

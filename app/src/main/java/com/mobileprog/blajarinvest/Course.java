@@ -6,6 +6,12 @@ public class Course {
     private String name;
     private int isCompleted;
 
+    public Course(long id, String name, int isCompleted) {
+        this.id = id;
+        this.name = name;
+        this.isCompleted = isCompleted;
+    }
+
     public Course(long id, String name) {
         this.id = id;
         this.name = name;

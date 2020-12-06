@@ -49,6 +49,7 @@ public class CourseContentActivity extends AppCompatActivity {
         } else {
             courseDatabase.complete(courseId);
             Intent intent = new Intent(this, CompleteActivity.class);
+            intent.putExtra("completedCourseId", courseId);
             startActivity(intent);
             finish();
         }
@@ -59,7 +60,7 @@ public class CourseContentActivity extends AppCompatActivity {
             page--;
             tvText.setText(courseContents.get(page - 1).getText());
         } else {
-//            TODO : back to menu, or just hide the btn at page 1
+            finish();
         }
     }
 

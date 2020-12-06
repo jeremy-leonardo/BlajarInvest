@@ -34,6 +34,12 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Course course = courseList.get(position);
         holder.tvName.setText(course.getName());
+        holder.tvNumber.setText(""+course.getId());
+        if (course.getIsCompleted() == 1) {
+            holder.tvComplete.setText("Selesai");
+        } else {
+            holder.tvComplete.setText("Belum Selesai");
+        }
 //        holder.ivCourse.setImageResource(course.getImage());
     }
 
@@ -45,11 +51,15 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
         TextView tvName;
+        TextView tvNumber;
+        TextView tvComplete;
 //        ImageView ivCourse;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvName = itemView.findViewById(R.id.tvName);
+            tvNumber = itemView.findViewById(R.id.tvNumber);
+            tvComplete = itemView.findViewById(R.id.tvComplete);
 //            ivCourse = itemView.findViewById(R.id.ivCourse);
 
             itemView.setOnClickListener(this);

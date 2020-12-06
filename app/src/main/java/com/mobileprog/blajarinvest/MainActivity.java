@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -37,6 +38,19 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new CourseAdapter(this, (ArrayList<Course>) courseList);
         rvCourses.setAdapter(adapter);
-
     }
+
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        Log.v("DEBUG", "onActivity Result");
+//        if (resultCode == RESULT_OK) {
+//           int completedCourseId = data.getIntExtra("completedCourseId", -99);
+//            Log.v("DEBUG", ""+completedCourseId);
+//           if(completedCourseId != -99) {
+//               courseList = courseDatabase.getAllCourse();
+//               adapter.notifyDataSetChanged();
+//           }
+//        }
+//    }
 }
