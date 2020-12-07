@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     public void onProfileIconClick(View view) {
         Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
         startActivity(intent);
+        finish();
     }
 
 //    @Override

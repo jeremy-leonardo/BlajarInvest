@@ -3,6 +3,9 @@ package com.mobileprog.blajarinvest;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class ProfileActivity extends AppCompatActivity {
@@ -10,8 +13,11 @@ public class ProfileActivity extends AppCompatActivity {
     TextView tvName;
     TextView tvLevel;
     TextView tvPointsNeeded;
+    Button btnEdit;
+    EditText etName;
     int points = 0;
     int level = 1;
+    boolean isEditMode = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +27,9 @@ public class ProfileActivity extends AppCompatActivity {
         tvName = findViewById(R.id.tvName);
         tvLevel = findViewById(R.id.tvLevel);
         tvPointsNeeded = findViewById(R.id.tvPointsNeeded);
+        btnEdit = findViewById(R.id.btnEdit);
+        etName = findViewById(R.id.etName);
+        etName.setVisibility(View.GONE);
 
         tvName.setText(PreferenceHelper.getUsername(this));
         points = PreferenceHelper.getPoints(this);
@@ -44,6 +53,24 @@ public class ProfileActivity extends AppCompatActivity {
         int excessPoints = points - calculatePointsNeeded(currentLevel);
         int needed = calculatePointsNeeded(currentLevel+1) - excessPoints;
         return needed;
+    }
+
+    public void editMode(View view){
+        if (!isEditMode) {
+            tvName.setVisibility(View.GONE);
+            etName.setVisibility(View.VISIBLE);
+            isEditMode = true;
+            btnEdit.setText("Save");
+            etName.setText(PreferenceHelper.getUsername(this));
+        } else {
+            tvName.setVisibility(View.VISIBLE);
+            etName.setVisibility(View.GONE);
+            isEditMode = false;
+            btnEdit.setText("Edit Profile");
+            String name = etName.getText().toString();
+            PreferenceHelper.setUsername(this, name);
+            tvName.setText(name);
+        }
     }
 
 }
