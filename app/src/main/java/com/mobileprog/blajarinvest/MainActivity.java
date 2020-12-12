@@ -3,6 +3,7 @@ package com.mobileprog.blajarinvest;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,33 +21,17 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    List<Course> courseList;
-    CourseDatabase courseDatabase;
-    RecyclerView rvCourses;
-    CourseAdapter adapter;
-    TextView tvWelcome;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tvWelcome = findViewById(R.id.tvWelcome);
-
-        String username = PreferenceHelper.getUsername(this);
-        tvWelcome.setText("Halo " + username + ",");
-
-        courseDatabase = new CourseDatabase(this);
-        courseList = courseDatabase.getAllCourse();
-
-        rvCourses = findViewById(R.id.rvCourses);
-        rvCourses.setLayoutManager(new LinearLayoutManager(this));
-
-        adapter = new CourseAdapter(this, (ArrayList<Course>) courseList);
-        rvCourses.setAdapter(adapter);
-
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        loadFragment(new HomeFragment());
     }
 
     public void onProfileIconClick(View view) {
@@ -77,7 +62,8 @@ public class MainActivity extends AppCompatActivity {
             Fragment fragment;
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-//                  TODO
+                    fragment = new HomeFragment();
+                    loadFragment(fragment);
                     return true;
                 case R.id.navigation_profile:
 //                  TODO
@@ -87,5 +73,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
     };
+
+    private void loadFragment(Fragment fragment) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
 
 }
