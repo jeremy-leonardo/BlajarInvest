@@ -40,6 +40,7 @@ public class CourseDatabase {
             course = new Course();
             course.setId(cursor.getLong(cursor.getColumnIndex(DatabaseHelper.FIELD_COURSE_ID)));
             course.setName(cursor.getString(cursor.getColumnIndex(DatabaseHelper.FIELD_COURSE_NAME)));
+            course.setIsCompleted(cursor.getInt(cursor.getColumnIndex(DatabaseHelper.FIELD_COURSE_IS_COMPLETED)));
         }
 
         cursor.close();
