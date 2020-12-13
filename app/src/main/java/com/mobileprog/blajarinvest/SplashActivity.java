@@ -41,6 +41,11 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void initDatabase() {
+        
+        // Seharusnya dan sebaiknya ini load data dari Database Server (Cloud),
+        // tapi tidak ada OpenAPI yang cocok untuk ini,
+        // dan membuat API sendiri itu diluar scope dari mata kuliah ini
+
         courseDatabase = new CourseDatabase(this);
         courseContentDatabase = new CourseContentDatabase(this);
         courseDatabase.insertCourse(new Course("Apa itu Investasi"));

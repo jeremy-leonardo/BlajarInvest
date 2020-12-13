@@ -16,8 +16,6 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-
-
         etName = findViewById(R.id.etName);
     }
 
@@ -25,6 +23,7 @@ public class WelcomeActivity extends AppCompatActivity {
         PreferenceHelper.setUsername(this, etName.getText().toString());
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
 }
