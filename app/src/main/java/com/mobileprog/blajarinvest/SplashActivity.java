@@ -10,6 +10,7 @@ public class SplashActivity extends AppCompatActivity {
 
     CourseDatabase courseDatabase;
     CourseContentDatabase courseContentDatabase;
+    QuizDatabase quizDatabase;
     private Handler waitHandler = new Handler();
 
     @Override
@@ -48,6 +49,8 @@ public class SplashActivity extends AppCompatActivity {
 
         courseDatabase = new CourseDatabase(this);
         courseContentDatabase = new CourseContentDatabase(this);
+        quizDatabase = new QuizDatabase(this);
+
         courseDatabase.insertCourse(new Course("Apa itu Investasi"));
         courseContentDatabase.insertCourseContent(new CourseContent(1,
                 "Sebelum masuk ke dalam materi, apakah Anda sudah memahami sebenarnya apa itu Investasi? Yuk, kita pahami bersama. " +
@@ -106,5 +109,10 @@ public class SplashActivity extends AppCompatActivity {
                         "\n\nUntuk investasi saham, maka dapat dimulai dengan membuka akun di sekuritas. Ada baiknya melakukan pengecekan di BEI dan memilih salah satu sekuritas terbesar yang ada di Indonesia, serta pertimbangkan juga sekuritas yang ada di dekat lokasi rumah." +
                         "\n\nUntuk investasi reksadana, maka dapat dimulai dengan membuka akun di APERD (agen penjual reksa dana) yang terdaftar secara legal.",
                 1));
+        quizDatabase.insertQuiz(new Quiz(
+                "________ merupakan tindakan penanaman aset atau dana yang dilakukan untuk memperoleh keuntungan (return) yang baik di masa depan",
+                "investasi"
+        ));
+
     }
 }

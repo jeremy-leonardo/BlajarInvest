@@ -59,6 +59,10 @@ public class MainActivity extends AppCompatActivity {
                     fragment = new HomeFragment();
                     loadFragment(fragment);
                     return true;
+                case R.id.navigation_quiz:
+                    fragment = new QuizFragment();
+                    loadFragment(fragment);
+                    return true;
                 case R.id.navigation_profile:
                     fragment = new ProfileFragment();
                     loadFragment(fragment);
