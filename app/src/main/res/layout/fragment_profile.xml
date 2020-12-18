@@ -77,7 +77,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="30dp"
-            android:text="Setiap menyelesaikan 1 course, Anda akan mendapatkan 50 point"
+            android:text="Anda akan mendapatkan 50 point setiap menyelesaikan 1 Course dan 20 point dari 1 Quiz"
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="14sp" />
