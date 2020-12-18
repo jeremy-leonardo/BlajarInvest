@@ -39,21 +39,17 @@ public class QuizContentActivity extends AppCompatActivity {
     }
 
     public void submitBtnClick(View view) {
-        Log.v("TEST", "test");
-        Log.v("TEST", etAnswer.getText().toString());
-        if(quiz.getAnswer().equals(etAnswer.getText().toString())){
-            Log.v("TEST", "bnr");
+        if(quiz.getAnswer().equals(etAnswer.getText().toString().toLowerCase())){
             if(quiz.getIsCompleted() != 1) PreferenceHelper.addPoints(this, 20);
             quizDatabase.complete(quizId);
 
             Intent intent = new Intent(this, MainActivity.class);
-//        intent.putExtra("completedQuizId", courseId);
+//        intent.putExtra("completedQuizId", quizId);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
 
         } else {
-            Log.v("TEST", "salah");
-            Toast.makeText(this, "Jawaban Anda salah", Toast.LENGTH_SHORT);
+            Toast.makeText(this, "Jawaban Anda salah", Toast.LENGTH_SHORT).show();
         }
 
     }

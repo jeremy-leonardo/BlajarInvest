@@ -113,6 +113,14 @@ public class SplashActivity extends AppCompatActivity {
                 "________ merupakan tindakan penanaman aset atau dana yang dilakukan untuk memperoleh keuntungan (return) yang baik di masa depan",
                 "investasi"
         ));
+        quizDatabase.insertQuiz(new Quiz(
+                "Sebutkan nama logam mulia yang paling sering digunakan sebagai instrumen investasi untuk melawan inflasi!",
+                "emas"
+        ));
+        quizDatabase.insertQuiz(new Quiz(
+                "Melalui manakah kita dapat membeli saham?",
+                "sekuritas"
+        ));
 
     }
 }
