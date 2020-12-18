@@ -34,7 +34,7 @@ public class QuizDatabase {
 
         String selection = "id=?";
         String[] selectionArgs = {"" + id};
-        Cursor cursor = db.query(DatabaseHelper.TABLE_NAME_COURSES, null, selection, selectionArgs, null, null, null);
+        Cursor cursor = db.query(DatabaseHelper.TABLE_NAME_QUIZZES, null, selection, selectionArgs, null, null, null);
 
         Quiz quiz = null;
         if(cursor.moveToFirst()) {

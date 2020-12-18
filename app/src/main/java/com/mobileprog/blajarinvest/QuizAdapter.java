@@ -68,11 +68,11 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.ViewHolder> {
             int position = getAdapterPosition();
             Quiz quiz = quizList.get(position);
 
-//            Intent intent = new Intent(context, QuizContentActivity.class);
+            Intent intent = new Intent(context, QuizContentActivity.class);
 
-//            intent.putExtra("quizId", quiz.getId());
+            intent.putExtra("quizId", quiz.getId());
 
-//            context.startActivity(intent);
+            context.startActivity(intent);
 
         }
 
