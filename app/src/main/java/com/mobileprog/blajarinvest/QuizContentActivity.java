@@ -42,6 +42,7 @@ public class QuizContentActivity extends AppCompatActivity {
         if(quiz.getAnswer().equals(etAnswer.getText().toString().toLowerCase())){
             if(quiz.getIsCompleted() != 1) PreferenceHelper.addPoints(this, 20);
             quizDatabase.complete(quizId);
+            Toast.makeText(this, "Jawaban Anda benar", Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(this, MainActivity.class);
 //        intent.putExtra("completedQuizId", quizId);
