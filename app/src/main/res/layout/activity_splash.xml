@@ -33,7 +33,7 @@
             android:layout_marginTop="20dp"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
-            android:text=" 2201731106 - Jeremy Leonardo\n 2201778482 - Muhammad Azril Kurniawan N.\n 2201744790 - Devita Lisea Sugianlie\n 2201765246 - Oey Hans Christian\n 2201760711 - Kenny Dharian\n 2201781994 - Nico"
+            android:text=" Kelas: LA01\n\n 2201731106 - Jeremy Leonardo\n 2201778482 - Muhammad Azril Kurniawan N.\n 2201744790 - Devita Lisea Sugianlie\n 2201765246 - Oey Hans Christian\n 2201760711 - Kenny Dharian\n 2201781994 - Nico"
             android:textColor="@android:color/white" />
 
     </LinearLayout>
