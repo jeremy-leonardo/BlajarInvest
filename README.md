@@ -1,11 +1,13 @@
 # Blajar Invest
 
-## Tentang Aplikasi
+Created for Mobile Programming final project.
 
-Blajar Invest merupakan aplikasi yang bertujuan untuk mengedukasi masyarakat yang awam terhadap investasi.
+## About
 
-## Anggota Kelompok
-Kelas : LA01 Mobile Programming <br>
+Blajar Invest is an android app that aims to educate people about investments.
+
+## Group
+Class : LA01 Mobile Programming <br>
 2201731106 - Jeremy Leonardo <br>
 2201778482 - Muhammad Azril Kurniawan N. <br>
 2201744790 - Devita Lisea Sugianlie <br>
