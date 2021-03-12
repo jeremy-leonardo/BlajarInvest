@@ -1,10 +1,7 @@
 # Blajar Invest
 
+Blajar Invest is an android app that aims to educate people about investments.<br>
 Created for MOBI6059 - Mobile Programming final project.
-
-## About
-
-Blajar Invest is an android app that aims to educate people about investments.
 
 ## Screenshots
 
